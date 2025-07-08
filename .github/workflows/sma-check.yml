@@ -1,0 +1,20 @@
+name: Check SMA on GPW
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # codziennie o 8:00 czasu polskiego (bo cron używa UTC)
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run SMA checker
+        run: python sma_checker.py
