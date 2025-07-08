@@ -12,7 +12,7 @@ first_investment_date = pd.to_datetime("2025-04-02")  # Pierwsza możliwa inwest
 FIXED_INVESTMENT = 2500.0  # Stała kwota inwestycji na kupno
 
 # Nazwa pliku logu, w którym będą zapisywane wszystkie transakcje
-log_filename = "tranzakcje_co_kupic.txt"
+log_filename = "transactions_what_to_buy.txt"
 
 # Jeśli plik logu już istnieje, usuwamy go, aby rozpocząć nową historię
 if os.path.exists(log_filename):
@@ -20,7 +20,7 @@ if os.path.exists(log_filename):
 
 # Wczytanie danych ze wszystkich plików w folderze "akcje"
 script_dir = os.path.dirname(os.path.abspath(__file__))  # Pobiera ścieżkę do katalogu skryptu
-ticker_files = glob.glob(os.path.join(script_dir, "akcje_pl", "*.txt"))
+ticker_files = glob.glob(os.path.join(script_dir, "stocks_pl", "*.txt"))
 events = []         # Lista zdarzeń transakcyjnych: {date, ticker, signal, price}
 ticker_data = {}    # Słownik przechowujący DataFrame dla każdego tickera
 
