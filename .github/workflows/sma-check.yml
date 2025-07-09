@@ -1,9 +1,9 @@
 name: Check SMA on GPW
 
 on:
-  schedule:
-    - cron: "0 6 * * *"  # codziennie o 8:00 czasu polskiego (bo cron używa UTC)
-  workflow_dispatch:
+ # schedule:
+#    - cron: "0 6 * * *"  # codziennie o 8:00 czasu polskiego (bo cron używa UTC)
+#  workflow_dispatch:
 
 jobs:
   run-script:
